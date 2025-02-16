@@ -9,57 +9,6 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
-
-@keyframes Sim-focus {
-  from {
-    box-shadow: none;
-  }
-
-  to {
-    box-shadow:  2px 2px 0 #000;
-  }
-}
-
-@keyframes Sim-hover {
-  from {
-    transform: translateX(-100%);
-  }
-
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes love-bip {
-  from {
-    transform: scale(1);
-  }
-
-  to {
-    transform: scale(1.25);
-  }
-}
-
-@keyframes sparks-bip {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes ico-focus {
-  from {
-    border: none;
-  }
-
-  to {
-    border: 2px solid #000;
-  }
-}
-
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -67,29 +16,30 @@
   font-variation-settings: "wght" var(--text-weight);
   background-image: var(--background-image);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 
 .header {
-  font-family: var(--pix-font);
+  font-family: var(--pix-font),sans-serif;
   font-variation-settings: "wght" var(--headind-weight);
   display:grid;
   justify-content: space-around;
-  min-block-size: 59dvb;
 }
 
 .label {
-  margin-top: 10.5vh;
+  margin-top: 100px;
   width: 73vh;
   background-color: white;
   text-align: center;
-  height: 38vh;
   font-size:clamp(49px,10vh,65px);
   display: flex;
   justify-content: center;
   flex-direction: column;
   gap: 20px;
-  border: 1px solid #000;
+  border: 2px solid #000;
+  padding: 128px 0px;
+  margin-bottom: 101px;
 }
 
 .discription {
@@ -97,13 +47,18 @@
   text-transform: uppercase;
 }
 
-
+.main {
+  display: grid;
+  justify-content: space-around;
+}
 
 .section-freetrack {
   background-color: white;
   border: 2px solid #000;
   font-size: 18px;
-  margin: 0 38.5vh;
+  min-width: 371px;
+  max-width: 698px;
+ /* margin: 0 38.5vh;*/
   margin-bottom: 50px;
   position: relative;
 }
@@ -112,22 +67,22 @@
   font-family: var(--main-font), sans-serif;
   font-variation-settings: "wght" var(--headind-weight);
   font-size: 18px;
-  padding: 6px 0px 4px 11px;
+  padding: 5px 0px 4px 11px;
 }
 
 .image {
-  height: 100%;
+  object-fit: cover;
+  object-position: center;
   width: 100%;
   border: 2px solid #000;
 }
 
 .main__content {
   display: grid;
-  padding: 30px 25px 25px 25px;
-  gap: 25px;
+  padding: 24px 25px 21px 26px;
+  gap: 27px;
 
 }
-
 
 .main__text {
   font-variation-settings: "wght" var(--text-weight);
@@ -147,15 +102,12 @@ button {
   display: flex;
   flex-direction: row;
   gap: 6px;
-}
-
-.card__icon-button {
-  padding: 0px;
+  align-items: flex-start;
 }
 
 .card__like-button {
-  border: 1px solid #000;
-  padding: 10.5px 37px;
+  border: 2px solid #000;
+  padding: 9px 37px 13px 35px;
   font-family: var(--pix-font),sans-serif;
   font-size: 14px;
 }
@@ -188,17 +140,13 @@ button {
   filter:sepia(80%) blur(0.2rem);
 }
 
-footer {
-  margin-top: 53px;
-}
-
 .footer-section {
   justify-self: center;
   display: flex;
   flex-direction: row;
   gap: 6px;
   background-color: white;
-  border: 1px solid #000;
+  border: 2px solid #000;
   margin-bottom: 105px;
 }
 
@@ -208,12 +156,13 @@ footer {
   display: grid;
   align-items: center;
   grid-template-columns: min-content max-content;
-  padding: 13px 21px 13.5px 21px;
+  padding: 18px 22px 13.5px 21px;
+  gap: 6px;
 }
 
 
 dialog::backdrop {
-  background-color: rgb(0 0 0 / 0.8);
+  background-color: rgb(0 0 0 / 0.75);
 }
 
 dialog[open] {
@@ -223,7 +172,13 @@ dialog[open] {
  row-gap: 10px;
 } 
 
-.submit {
+dialog[open] .ico-save{
+  height: 38px;
+  width: 38px;
+  align-self: center;
+}
+
+.dialog__form {
   grid-column: 1/3;
   justify-self: center;
   border: 2px solid #000;
@@ -241,34 +196,50 @@ dialog[open] {
   mix-blend-mode: difference;
 }
 
-.diskett {
-  align-self: center;
+.ico-save {
+  align-self: start;
   justify-self: center;
   color: #fff;
   mix-blend-mode: difference;
+  width: 21px;
+  height: 21px;
 }
 
 .Sim_but:focus {
   outline: none;
 }
 
-.Sim_but:focus-visible {
-  animation: Sim-focus 0.3s ease ;
-}
-
 .Sim_but {
+  box-shadow: 0px 0px 0px transparent;
+  transition: 0.3s ease box-shadow;
   position: relative;
   overflow: hidden;
 }
+.Sim_but:focus-visible {
+  box-shadow:  2px 2px 0 #000;
+}
 
 
-.Sim_but:hover::before {
+.Sim_but::before {
   content: "";
   position: absolute;
   inset: 0;
   background-color: #000;
-  animation:Sim-hover 0.5s ease-in-out;
+  transform: translateX(-100%);
+  transition: 0.5s ease-in-out;
 
+}
+
+.Sim_but:hover::before {
+  background-color: #000;
+  transform: translateX(0);
+}
+
+.card__icon-button {
+  display: grid;
+  padding: 0px;
+  border: none;
+  transition: 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -276,71 +247,7 @@ dialog[open] {
 }
 
 .card__icon-button:focus-visible {
-  animation: ico-focus 0.3s ease;
-}
-
-.contour {
-  fill: var(--contour);
-}
-
-.sparks {
-  opacity: 0;
-}
-
-.card__icon-button .core {
-  transition: fill 0.3s 0.03s linear;
-  fill: transparent;
-}
-
-.card__icon-button .main-body {
-  transition: fill 0.3s 0.05s linear;
-  fill: transparent;
-}
-
-.card__icon-button:hover .core {
-  fill: var(--contour);
-}
-
-.card__icon-button:hover .main-body {
-  fill: var(--contour);
-}
-
-.card__icon-button:active .core {
-  fill: var(--sparks);
-}
-
-.card__icon-button:active .main-body {
-  fill: var(--sparks);
-}
-
-
-.like-icon.is-liked .core {
-  fill: var(--sparks);
-  transition: fill 0.3s ease-in;
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--sparks);
-  transition: fill 0.3s 0.05s ease-in;
-}
-
-.like-icon.is-liked .contour {
-  fill: var(--sparks);
-  transition: fill 0.3s 0.06s ease-in;
-}
-
-
-.like-icon.is-liked .heart {
-  animation: love-bip 0.3s 0.1s ease-in;
-}
-
-.like-icon.is-liked .sparks {
-  animation: sparks-bip 0.3s 0.3s ease-in;
-}
-
-.like-icon .contour {
-  fill: var(--contour);
-  transition: fill 0.1s ease-in;
+  border: 2px solid #000;
 }
 
 .label-section {
@@ -349,14 +256,14 @@ dialog[open] {
 
 .label-head {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 25px;
+  right: 15px;
   background-color: transparent;
   font-size: 14px;
   font-family: var(--pix-font),sans-serif;
   mix-blend-mode: hard-light;
-  -webkit-text-stroke: 1px #fff;
-
+  text-shadow: 2px 2px 0 #fff;
+  opacity: 0.5;
 }
 
 @supports (text-stroke: 1px #fff) {
@@ -369,13 +276,11 @@ dialog[open] {
   .header {
     width: 100%;
     justify-content: normal;
-    height: 79vh;
   }
   .label {
     width: 100%;
     font-size: clamp(49px, 7.5vh, 65px);
     margin-top: 15vh;
-    height: 49.5vh;
   }
 
   .discription {
@@ -393,13 +298,13 @@ dialog[open] {
   }
 
   .main__content {
-    gap: 27px;
-    padding: 22px 26px 25px 25px;
+    padding: 27px 26px 25px 25px;
   }
 
   .card__save-button {
     display: flex;
     flex-direction: column;
-    padding: 24px 20px 18px 20px;
+    gap: 10px;
+    padding: 11px 20px 13px 20px;
   }
 }
