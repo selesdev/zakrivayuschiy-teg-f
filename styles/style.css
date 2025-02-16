@@ -172,7 +172,7 @@ dialog[open] {
  row-gap: 10px;
 } 
 
-dialog[open] .ico-save{
+dialog[open] .ico-save {
   height: 38px;
   width: 38px;
   align-self: center;
