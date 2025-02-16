@@ -64,7 +64,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font),sans-serif;
-  font-variation-settings: var(--text-weight);
+  font-variation-settings: "wdth" var(--text-weight);
   background-image: var(--background-image);
   background-size: cover;
 }
@@ -72,7 +72,7 @@
 
 .header {
   font-family: var(--pix-font);
-  font-variation-settings:var(--headind-weight);
+  font-variation-settings: "wdth" var(--headind-weight);
   display:grid;
   justify-content: space-around;
   min-block-size: 59dvb;
@@ -110,7 +110,7 @@
 
 .title {
   font-family: var(--main-font), sans-serif;
-  font-variation-settings: "wght" 700;
+  font-variation-settings: "wght" var(--headind-weight);
   font-size: 18px;
   padding: 6px 0px 4px 11px;
 }
