@@ -10,6 +10,56 @@
 
 */
 
+@keyframes Sim-focus {
+  from {
+    box-shadow: none;
+  }
+
+  to {
+    box-shadow:  2px 2px 0 #000;
+  }
+}
+
+@keyframes Sim-hover {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes love-bip {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.25);
+  }
+}
+
+@keyframes sparks-bip {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ico-focus {
+  from {
+    border: none;
+  }
+
+  to {
+    border: 2px solid #000;
+  }
+}
+
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -64,13 +114,12 @@
   font-size: 18px;
   padding: 6px 0px 4px 11px;
   font-weight: 785;
-  font-size: 18px;
 }
 
 .image {
   height: 100%;
   width: 100%;
-  display: block;
+  border: 2px solid #000;
 }
 
 .main__content {
@@ -82,12 +131,10 @@
 
 
 .main__text {
-  font-weight: var(--text-weight);
+  font-variation-settings: "wght" var(--text-weight);
   font-size: 18px;
   justify-self: start;
   line-height: 117%;
-  font-weight: 400;
-
 }
 
 button {
@@ -110,7 +157,7 @@ button {
 .card__like-button {
   border: 1px solid #000;
   padding: 10.5px 37px;
-  font-family: var(--pix-font);
+  font-family: var(--pix-font),sans-serif;
   font-size: 14px;
 }
 
@@ -157,7 +204,7 @@ footer {
 }
 
 .card__save-button {
-  font-family: var(--pix-font);
+  font-family: var(--pix-font),sans-serif;
   font-size: 14px;
 }
 
@@ -185,12 +232,12 @@ dialog[open] {
   justify-self: center;
   border: 2px solid #000;
   padding: 4px 100px;
-  font-family: var(--pix-font);
+  font-family: var(--pix-font),sans-serif;
   font-size: 14px;
 }
 
 .button__text {
-  font-family: var(--pix-font);
+  font-family: var(--pix-font),sans-serif;
   font-size: 14px;
   position: relative;
   z-index: 1;
@@ -213,11 +260,6 @@ dialog[open] {
   animation: Sim-focus 0.3s ease ;
 }
 
-/*.Sim_but:hover {
-  animation:Sim-hover 0.5s ease-in-out;
- 
-}*/
-
 .Sim_but {
   position: relative;
   overflow: hidden;
@@ -233,42 +275,12 @@ dialog[open] {
 
 }
 
-@keyframes Sim-focus {
-  from {
-    box-shadow: none;
-  }
-
-  to {
-    box-shadow:  2px 2px 0 #000;
-  }
-}
-
-@keyframes Sim-hover {
-  from {
-    transform: translateX(-100%);
-  }
-
-  to {
-    transform: translateX(0);
-  }
-}
-
 .card__icon-button:focus {
   outline: none;
 }
 
 .card__icon-button:focus-visible {
   animation: ico-focus 0.3s ease;
-}
-
-@keyframes ico-focus {
-  from {
-    border: none;
-  }
-
-  to {
-    border: 2px solid #000;
-  }
 }
 
 .contour {
@@ -321,25 +333,6 @@ dialog[open] {
   transition: fill 0.3s 0.06s ease-in;
 }
 
-@keyframes love-bip {
-  from {
-    transform: scale(1);
-  }
-
-  to {
-    transform: scale(1.25);
-  }
-}
-
-@keyframes sparks-bip {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
 
 .like-icon.is-liked .heart {
   animation: love-bip 0.3s 0.1s ease-in;
@@ -375,3 +368,42 @@ dialog[open] {
     text-stroke: 1px #fff
   }
 } 
+
+@media (width <= 376px) {
+  .header {
+    width: 100%;
+    justify-content: normal;
+    height: 79vh;
+  }
+  .label {
+    width: 100%;
+    font-size: clamp(49px, 7.5vh, 65px);
+    margin-top: 15vh;
+    height: 49.5vh;
+  }
+
+  .discription {
+    font-size: clamp(14px,1vh,23px);
+  }
+
+  .section-freetrack {
+    width: 100%;
+    margin: 0px;
+    margin-bottom: 49px;
+  }
+
+  .title {
+    padding: 4px 9px 4px 10px;
+  }
+
+  .main__content {
+    gap: 27px;
+    padding: 22px 26px 25px 25px;
+  }
+
+  .card__save-button {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px 18px 20px;
+  }
+}
