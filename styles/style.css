@@ -104,7 +104,7 @@ button {
 }
 
 .card__icon-button {
-  padding-top: 8px;
+  padding: 0px;
 }
 
 .card__like-button {
@@ -270,3 +270,108 @@ dialog[open] {
     border: 2px solid #000;
   }
 }
+
+.contour {
+  fill: var(--contour);
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.card__icon-button .core {
+  transition: fill 0.3s 0.03s linear;
+  fill: transparent;
+}
+
+.card__icon-button .main-body {
+  transition: fill 0.3s 0.05s linear;
+  fill: transparent;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--contour);
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--contour);
+}
+
+.card__icon-button:active .core {
+  fill: var(--sparks);
+}
+
+.card__icon-button:active .main-body {
+  fill: var(--sparks);
+}
+
+
+.like-icon.is-liked .core {
+  fill: var(--sparks);
+  transition: fill 0.3s ease-in;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--sparks);
+  transition: fill 0.3s 0.05s ease-in;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--sparks);
+  transition: fill 0.3s 0.06s ease-in;
+}
+
+@keyframes love-bip {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.25);
+  }
+}
+
+@keyframes sparks-bip {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.like-icon.is-liked .heart {
+  animation: love-bip 0.3s 0.1s ease-in;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks-bip 0.3s 0.3s ease-in;
+}
+
+.like-icon .contour {
+  fill: var(--contour);
+  transition: fill 0.1s ease-in;
+}
+
+.label-section {
+  position: relative;
+}
+
+.label-head {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  font-size: 14px;
+  font-family: var(--pix-font),sans-serif;
+  mix-blend-mode: hard-light;
+  -webkit-text-stroke: 1px #fff;
+
+}
+
+@supports (text-stroke: 1px #fff) {
+  .label-head {
+    text-stroke: 1px #fff
+  }
+} 
