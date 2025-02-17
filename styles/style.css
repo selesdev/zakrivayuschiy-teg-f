@@ -10,36 +10,36 @@
 
 */
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
   font-family: var(--main-font),sans-serif;
-  font-variation-settings: "wght" var(--text-weight);
   background-image: var(--background-image);
   background-size: cover;
   background-attachment: fixed;
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+  font-variation-settings: "wght" var(--text-weight);
 }
 
 
 .header {
-  font-family: var(--pix-font),sans-serif;
-  font-variation-settings: "wght" var(--headind-weight);
   display:grid;
   justify-content: space-around;
+  font-family: var(--pix-font),sans-serif;
+  font-variation-settings: "wght" var(--headind-weight);
 }
 
 .label {
-  margin-top: 100px;
-  width: 73vh;
-  background-color: white;
-  text-align: center;
-  font-size:clamp(49px,10vh,65px);
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   gap: 20px;
+  width: 49vw;
+  margin-top: 100px;
+  margin-bottom: 101px;
   border: 2px solid #000;
   padding: 128px 0px;
-  margin-bottom: 101px;
+  font-size:clamp(49px,10vh,65px);
+  text-align: center;
+  background-color: white;
 }
 
 .discription {
@@ -49,60 +49,59 @@
 
 .main {
   display: grid;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .section-freetrack {
-  background-color: white;
-  border: 2px solid #000;
-  font-size: 18px;
+  position: relative;
   min-width: 371px;
   max-width: 698px;
- /* margin: 0 38.5vh;*/
-  margin-bottom: 50px;
-  position: relative;
+  margin-bottom: 52px;
+  border: 2px solid #000;
+  font-size: 18px;
+  background-color: white;
 }
 
 .title {
-  font-family: var(--main-font), sans-serif;
-  font-variation-settings: "wght" var(--headind-weight);
-  font-size: 18px;
   padding: 5px 0px 4px 11px;
+  font-family: var(--main-font), sans-serif;
+  font-size: 18px;
+  font-variation-settings: "wght" var(--headind-weight);
 }
 
 .image {
-  object-fit: cover;
-  object-position: center;
   width: 100%;
   border: 2px solid #000;
+  object-fit: cover;
+  object-position: center;
 }
 
 .main__content {
   display: grid;
-  padding: 24px 25px 21px 26px;
   gap: 27px;
+  padding: 26px 25px 21px 26px;
 
 }
 
 .main__text {
-  font-variation-settings: "wght" var(--text-weight);
-  font-size: 18px;
   justify-self: start;
+  font-size: 18px;
   line-height: 117%;
+  font-variation-settings: "wght" var(--text-weight);
 }
 
 button {
- outline: none;
  border: none;
+ outline: none;
  background: inherit;
 }
 
 .button-section {
-  justify-self: end;
   display: flex;
   flex-direction: row;
-  gap: 6px;
+  justify-self: end;
   align-items: flex-start;
+  gap: 6px;
 }
 
 .card__like-button {
@@ -125,7 +124,7 @@ button {
 }
 
 .saturate {
-  filter: saturate(200%)
+  filter: saturate(200%);
 }
 
 .grayscale {
@@ -141,23 +140,23 @@ button {
 }
 
 .footer-section {
-  justify-self: center;
   display: flex;
   flex-direction: row;
+  justify-self: center;
   gap: 6px;
-  background-color: white;
-  border: 2px solid #000;
   margin-bottom: 105px;
+  border: 2px solid #000;
+  background-color: white;
 }
 
 .card__save-button {
+  display: grid;
+  grid-template-columns: min-content max-content;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 22px 13.5px 21px;
   font-family: var(--pix-font),sans-serif;
   font-size: 14px;
-  display: grid;
-  align-items: center;
-  grid-template-columns: min-content max-content;
-  padding: 18px 22px 13.5px 21px;
-  gap: 6px;
 }
 
 
@@ -167,78 +166,88 @@ dialog::backdrop {
 
 dialog[open] {
  display: grid;
- padding: 30px;
- grid-template-columns:  min-content min-content;
+ grid-template-columns:  min-content 0.9fr;
+ grid-template-rows: auto min-content;
+ justify-content: center;
+ align-items: center;
  row-gap: 10px;
+  column-gap: 14px;
+  width: 357PX;
+  height: 193PX;
+ padding: 30px;
 } 
 
 dialog[open] .ico-save {
-  height: 38px;
-  width: 38px;
   align-self: center;
+  width: 38px;
+  height: 38px;
+}
+
+dialog[open] .button__text {
+  line-height: 21px;
+  text-transform: uppercase;
 }
 
 .dialog__form {
   grid-column: 1/3;
   justify-self: center;
   border: 2px solid #000;
-  padding: 4px 100px;
+  padding: 10px 125px;
   font-family: var(--pix-font),sans-serif;
   font-size: 14px;
 }
 
 .button__text {
-  font-family: var(--pix-font),sans-serif;
-  font-size: 14px;
   position: relative;
   z-index: 1;
   color: #fff;
+  font-family: var(--pix-font),sans-serif;
+  font-size: 14px;
   mix-blend-mode: difference;
 }
 
 .ico-save {
-  align-self: start;
   justify-self: center;
-  color: #fff;
-  mix-blend-mode: difference;
+  align-self: start;
   width: 21px;
   height: 21px;
+  color: #fff;
+  mix-blend-mode: difference;
 }
 
-.Sim_but:focus {
+.sim_but:focus {
   outline: none;
 }
 
-.Sim_but {
-  box-shadow: 0px 0px 0px transparent;
-  transition: 0.3s ease box-shadow;
+.sim_but {
   position: relative;
+  box-shadow: 0px 0px 0px transparent;
   overflow: hidden;
+  transition: 0.3s ease box-shadow;
 }
-.Sim_but:focus-visible {
+.sim_but:focus-visible {
   box-shadow:  2px 2px 0 #000;
 }
 
 
-.Sim_but::before {
+.sim_but::before {
   content: "";
   position: absolute;
   inset: 0;
   background-color: #000;
-  transform: translateX(-100%);
   transition: 0.5s ease-in-out;
+  transform: translateX(-100%);
 
 }
 
-.Sim_but:hover::before {
-  background-color: #000;
+.sim_but:hover::before {
   transform: translateX(0);
 }
 
 .card__icon-button {
   display: grid;
-  padding: 0px;
   border: none;
+  padding: 0px;
   transition: 0.3s ease;
 }
 
@@ -258,29 +267,31 @@ dialog[open] .ico-save {
   position: absolute;
   top: 25px;
   right: 15px;
-  background-color: transparent;
-  font-size: 14px;
-  font-family: var(--pix-font),sans-serif;
-  mix-blend-mode: hard-light;
-  text-shadow: 2px 2px 0 #fff;
   opacity: 0.5;
+  font-family: var(--pix-font),sans-serif;
+  font-size: 14px;
+  text-shadow: 2px 2px 0 #fff;
+  background-color: transparent;
+  mix-blend-mode: hard-light;
 }
 
-@supports (text-stroke: 1px #fff) {
+@supports (-webkit-text-stroke: 2px #fff) {
   .label-head {
-    text-stroke: 1px #fff
+    text-shadow: none;
+    text-stroke: 2px #fff;
   }
 } 
 
 @media (width <= 376px) {
   .header {
-    width: 100%;
     justify-content: normal;
+    width: 100%;
   }
   .label {
     width: 100%;
-    font-size: clamp(49px, 7.5vh, 65px);
-    margin-top: 15vh;
+    margin-top: 100px;
+    padding: 120px 0px;
+    font-size: clamp(49px, 5.5vh, 65px);
   }
 
   .discription {
@@ -298,13 +309,19 @@ dialog[open] .ico-save {
   }
 
   .main__content {
-    padding: 27px 26px 25px 25px;
+    padding: 25px 26px 23px 25px;
   }
 
   .card__save-button {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 11px 20px 13px 20px;
+    gap: 7px;
+    padding: 13px 0px 15px 0px;
+  }
+
+  .ico-save {
+    align-self: center;
+    width: 29px;
+    height: 29px;
   }
 }
