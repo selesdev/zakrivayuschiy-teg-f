@@ -12,10 +12,12 @@
 
 @keyframes love-bip {
   from {
+    transform-origin:center center;
     transform: scale(0);
   }
 
   to {
+    transform-origin:center center;
     transform: scale(1);
   }
 }

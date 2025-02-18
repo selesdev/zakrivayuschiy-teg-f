@@ -32,24 +32,25 @@
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-  width: 49vw;
+  inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
   margin-top: 100px;
   margin-bottom: 101px;
   border: 2px solid #000;
   padding: 128px 0px;
-  font-size:clamp(49px,10vh,65px);
+  font-size:clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);;
   text-align: center;
   background-color: white;
 }
 
 .discription {
-  font-size:clamp(14px,10vh,23px);
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   text-transform: uppercase;
 }
 
 .main {
   display: grid;
   justify-content: center;
+  align-content: center;
 }
 
 .section-freetrack {
@@ -165,16 +166,15 @@ dialog::backdrop {
 }
 
 dialog[open] {
- display: grid;
- grid-template-columns:  min-content 0.9fr;
- grid-template-rows: auto min-content;
- justify-content: center;
- align-items: center;
- row-gap: 10px;
+  display: grid;
+  grid-template-columns:  min-content 0.9fr;
+  grid-template-rows: auto min-content;
+  justify-content: center;
+  align-items: center;
+  row-gap: 24px;
   column-gap: 14px;
-  width: 357PX;
-  height: 193PX;
- padding: 30px;
+  width: 357px;
+  padding: 30px;
 } 
 
 dialog[open] .ico-save {
@@ -215,22 +215,22 @@ dialog[open] .button__text {
   mix-blend-mode: difference;
 }
 
-.sim_but:focus {
+.button:focus {
   outline: none;
 }
 
-.sim_but {
+.button {
   position: relative;
   box-shadow: 0px 0px 0px transparent;
   overflow: hidden;
   transition: 0.3s ease box-shadow;
 }
-.sim_but:focus-visible {
+.button:focus-visible {
   box-shadow:  2px 2px 0 #000;
 }
 
 
-.sim_but::before {
+.button::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -240,7 +240,7 @@ dialog[open] .button__text {
 
 }
 
-.sim_but:hover::before {
+.button:hover::before {
   transform: translateX(0);
 }
 
@@ -291,11 +291,6 @@ dialog[open] .button__text {
     width: 100%;
     margin-top: 100px;
     padding: 120px 0px;
-    font-size: clamp(49px, 5.5vh, 65px);
-  }
-
-  .discription {
-    font-size: clamp(14px,1vh,23px);
   }
 
   .section-freetrack {
@@ -316,7 +311,7 @@ dialog[open] .button__text {
     display: flex;
     flex-direction: column;
     gap: 7px;
-    padding: 13px 0px 15px 0px;
+    padding:  13px 22px 15px 20px;
   }
 
   .ico-save {
